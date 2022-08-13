@@ -1,0 +1,75 @@
+.content {
+	background-color: #000;
+	color: #fff;
+	font-size: 30px;
+	font-style: italic;
+	height: 100%;
+	padding: 20px;
+	text-align: center;
+}
+ form {
+	margin: 0 auto; 
+	padding: 20px 0px;
+ }
+ .fieldset {
+	padding-bottom: 20px;
+ }
+.error, .message {
+	min-height: 30px;
+	padding: 8px 10px 0px 10px;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 700;
+}
+.error {
+	color: red;
+}
+.message {
+	color: green;
+}
+.passContainer{
+	display: inline-block;
+	position: relative;
+}
+.eyeImg{
+	cursor: pointer;
+	position: absolute;
+	height: 20px;
+	top: 37%;
+	right: 10px;
+	opacity: 0.6;
+}
+.eyeImg:hover {
+	opacity: 1;
+}
+.input, .inputErr, .inputDesable {
+	height: 35px;
+	padding: 5px;
+	border-radius: 5px;
+	font-weight: 500;
+	font-size: 16px;
+}
+.input {
+	border: solid 2px #38ea0c;
+}
+.inputErr {
+	border:  2px solid #e90c0c;
+}
+.submitBtn{
+	margin:20px auto;
+  }
+
+  @media (max-width: 450px) {
+	.content {
+		padding: 10px;
+	}
+	.form {
+		padding: 0;
+	}
+	.form fieldset {
+		margin: 0;
+	}
+	.submitBtn{
+		margin: 15px 10px 5px;
+	  }
+}

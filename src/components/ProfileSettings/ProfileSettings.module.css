@@ -1,0 +1,322 @@
+.contant {
+	height: 100%;
+	padding: 10px;
+	background-color: brown;
+	text-align: center;
+	color: black;
+	font-size: 50px;
+}
+.blockTitle {
+	font-size: 30px;
+	font-style: italic;
+}
+.input, .inputErr {
+	box-sizing: border-box;
+	resize: none;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	width: 100%;
+	height: 33px;
+	line-height: 120%;
+	transition: all 0.4s ease 0s;
+}
+.inputErr {
+	outline: 1px solid  #e90c0c;
+	outline-offset: -3px;
+}
+.input:focus {
+	outline: 1px solid  #38ea0c;
+	outline-offset: -3px;
+}
+/** =================================================================== */
+.block1 {
+	grid-area: block1;
+	display: grid;
+	grid-gap: 20px;
+	padding: 20px;
+	min-width: 100%;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(min-content);
+	grid-template-areas: 
+	"informblock1"
+	"informblock2"
+	"informblock3"
+	"informblock4";
+}
+.informblock1, .informblock2, .informblock3, .informblock4,
+.contactblock1,.contactblock2,.contactblock3,.contactblock4,
+.contactblock5,.contactblock6,.contactblock7,.contactblock8 {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: min-content;
+	grid-template-areas: "label description";
+}
+.label {
+	grid-area: label;
+	text-align: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+}
+.spanDescription {
+	grid-area: description;
+	text-align: left;
+	font-size: 18px;
+	font-weight: 700;
+	color: #000;
+	font-style: italic;
+}
+.informblock1{
+	grid-area: informblock1;
+}
+.informblock2{
+	grid-area: informblock2;
+}
+.informblock3{
+	grid-area: informblock3;
+}
+.informblock4{
+	grid-area: informblock4;
+}
+.jobCheck{
+	width: 30px;
+}
+/** =================================================================== */
+.block2 {
+	grid-area: block2;
+	display: grid;
+	grid-gap: 20px;
+	padding: 20px;
+	min-width: 100%;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(min-content);
+	grid-template-areas: 
+	"contactblock1"
+	"contactblock2"
+	"contactblock3"
+	"contactblock4"
+	"contactblock5"
+	"contactblock6"
+	"contactblock7"
+	"contactblock8";
+}
+.contactblock1{
+	grid-area: contactblock1;
+}
+.contactblock2{
+	grid-area: contactblock2;
+}
+.contactblock3{
+	grid-area: contactblock3;
+}
+.contactblock4{
+	grid-area: contactblock4;
+}
+.contactblock5{
+	grid-area: contactblock5;
+}
+.contactblock6{
+	grid-area: contactblock6;
+}
+.contactblock7{
+	grid-area: contactblock7;
+}
+.contactblock8{
+	grid-area: contactblock8;
+}
+/** =================================================================== */
+.block3 {
+	grid-area: block3;
+	align-items: center;
+	display: grid;
+	grid-gap: 10px;
+	padding: 20px;
+   min-width: 100%;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+	"imageBlock uploadContainer";
+}
+.imageBlock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-area: imageBlock;
+}
+.avatarImg {
+	border-radius: 50%;
+	padding: 30px;
+	max-height: 300px;
+	max-width: 100%;
+	object-fit: contain;
+	transition: all 0.5s ease 0s;
+}
+.avatarImg:hover {
+	cursor: pointer;
+	padding: 0;
+}
+.uploadContainer {
+	min-height: 300px;
+	grid-area: uploadContainer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	outline: 2px dashed #fff;
+	outline-offset: -12px;
+	background-color: brown;
+	color: #1f3c44;
+}
+.uploadImg {
+	padding: 5px 15px;
+	max-height: 180px;
+	max-width: 100%;
+	user-select: none;
+}
+.uploadContainer div {
+	position: relative;
+	z-index: 10;
+}
+.fileInput {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	position: absolute;
+	z-index: -10;
+}
+.fileInput:focus + .fileBtn {
+	outline: 1px solid #0078d7;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.fileBtn {
+	padding: 3px;
+	font-size: 18px;
+	font-weight: 700;
+	cursor: pointer;
+}
+.fileBtn:hover {
+	text-decoration: underline;
+}
+/** =================================================================== */
+.buttonsBlock{
+	grid-area: buttons;
+	display: grid;
+	grid-gap: 20px;
+	justify-content: center;
+	grid-template-columns: max-content max-content;
+	grid-template-rows: 1fr;
+	grid-template-areas: "editBtn submitBtn";
+}
+.editBtn{
+	grid-area: editBtn;
+}
+.submitBtn{
+	grid-area: submitBtn;
+}
+.error1Block {
+	grid-area: blockErr1;
+	text-align: left;
+	font-size: 20px;
+	font-style: italic;
+	color: #fff;
+	letter-spacing: 2px;
+	border-radius: 10px;
+	padding: 20px;
+	min-width: 80%;
+}
+.error2Block{
+	grid-area: blockErr2;
+	text-align: left;
+	font-size: 20px;
+	font-style: italic;
+	color: #fff;
+	letter-spacing: 2px;
+	border-radius: 10px;
+	padding: 20px;
+	min-width: 80%;
+}
+/** =================================================================== */
+.form {
+	width: 100%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content min-content min-content minmax(0px, min-content ) minmax(0px, min-content ) 1fr;
+	grid-template-areas: 
+			"block1"
+			"block2"
+			"block3"
+			"blockErr1"
+			"blockErr2"
+			"buttons";
+}
+/** =================================================================== */
+@media (min-width: 1200px) {
+	.block1, .block2, .block3{
+		min-width: 70%;
+	}
+}
+@media (max-width: 1000px) {
+	.blockTitle{
+		font-size: 24px;
+		margin: 0;
+	}
+}
+@media (max-width: 767px) {
+	.block1, .block2, .block3{
+		padding: 10px;
+	}
+	.label {
+		font-size: 18px;
+	}
+	.spanDescription {
+		font-size: 16px;
+	}
+	.block3 {
+		grid-template-columns: 1fr;
+		grid-template-rows: max-content max-content;
+		grid-gap: 0px;
+		grid-template-areas:
+		"imageBlock"
+		"uploadContainer";
+	}
+	.uploadImg {
+		padding: 5px;
+		max-height: 100px;
+		user-select: none;
+	}
+	.uploadContainer {
+		justify-self: center;
+		min-height: 220px;
+		width: 250px;
+	}
+}
+@media (max-width: 550px) {
+	.blockTitle{
+		font-size: 20px;
+		margin: 0;
+	}
+	.contactblock1,.contactblock2,.contactblock3,.contactblock4,
+	.contactblock5,.contactblock6,.contactblock7,.contactblock8,
+	.informblock1, .informblock2, .informblock3 {
+		grid-gap: 5px;
+		grid-template-columns: 1fr;
+		grid-template-rows: max-content max-content;
+		grid-template-areas: 
+		"label"
+		"description";
+	}
+	.informblock4 {
+		grid-template-columns: 150px 1fr;
+}
+	.label {
+		font-size: 16px;
+	}
+	.spanDescription {
+		font-size: 14px;
+	}
+}
+/** =================================================================== */

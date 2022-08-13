@@ -1,0 +1,43 @@
+.article {
+	border-radius: 5px ;
+	background: linear-gradient(180deg, brown, brown);
+	padding: 10px 5px 5px 60px;
+	position: relative;
+
+ }
+ .posttext {
+	min-height: 50px;
+ }
+ .logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+ }
+ .logo:hover {
+	cursor: pointer;
+	width: 42px;
+	height: 42px;
+ }
+ .postimg {
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+ }
+ .like {
+	 text-align: center;
+	 border-radius: 50%;
+	 display: inline-block;
+	 padding: 1px 10px;
+	 background-color: #fff;
+	 height: 25px;
+	 color: #1db91d;
+	 font-weight: 600;
+	 font-style: italic;
+ }
+ .annotation {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: space-between;
+ }

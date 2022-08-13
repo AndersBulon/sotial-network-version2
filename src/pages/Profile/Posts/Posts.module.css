@@ -1,0 +1,76 @@
+.postsElement {
+	display: grid;
+	grid-gap: 10px;
+	align-items: end;
+	grid-template-rows: min-content 1fr;
+	grid-template-columns: 200px 1fr;
+	grid-template-areas: 
+		"hiddenBtn newpost"
+		"postcontainer postcontainer";
+}
+.comentsBtn {
+	grid-area: hiddenBtn;
+	min-width: 150px;
+ }
+ .postcontainer {
+	grid-area: postcontainer;
+	 display: grid;
+	 grid-gap: 10px;
+ }
+
+/** ========================================================== */
+.createNewPost {
+	border: thick solid brown;
+	grid-area: newpost;
+	border-radius: 10px;
+	background-color: #000;
+	
+}
+.postForm {
+	display: grid;
+	grid-auto-flow: row;
+	justify-content: space-around;
+	grid-gap: 15px;
+	grid-template-rows: max-content 1fr max-content;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+	"postErr" 
+	"newPost" 
+	"sendBtn";
+}
+.postErr {
+	color: red;
+	grid-area: postErr;
+	justify-self: center;
+	padding: 5px 10px;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: 700;
+
+}
+.newpostInput {
+	grid-area: newPost;
+	justify-self: center;
+	width: 80%;
+}
+.sendPostBtn {
+	grid-area: sendBtn;
+	justify-self: center;
+
+}
+/** ========================================================== */
+
+@media (max-width:800px) {
+	.postsElement {
+		grid-template-rows: 180px 30px 1fr ;
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		"newpost"
+		"hiddenBtn"
+		"postcontainer";
+	}
+	.newpostInput {
+		justify-self: center;
+		width: 90%;
+	}
+}

@@ -1,0 +1,163 @@
+.profile {
+	padding-bottom: 10px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 200px auto;
+	grid-template-rows: 200px 1fr auto;
+	grid-template-areas:
+	  "avatar infoBlock"
+	  "id infoBlock"
+	  "status status";
+ }
+ .id {
+	grid-area: id;
+	border: 2px solid #fff;
+	background: #000;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 26px;
+	font-weight: 700;
+	padding: 10px;
+	border-radius: 5px;
+ }
+ /* * =============================================================================== */
+ .infoBlock {
+	grid-area: infoBlock;
+	font-style: italic;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(max-content);
+	grid-template-areas: 
+	"infoTitle";
+ }
+ .infoTitle{
+	color: #fff;
+	grid-area: infoTitle;
+	font-size: 26px;
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+ .infoItem{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: min-content;
+	grid-template-areas: 
+	"title description";
+}
+.infoItem:not(:last-child){
+	margin: 0px 0px  10px 0px;
+	
+}
+ .title {
+	grid-area: title;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: left;
+	color: rgb(212, 235, 177);
+ }
+ .text {
+	grid-area: description;
+	text-align: left;
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+ }
+/* * =============================================================================== */
+ .avatar {
+	grid-area: avatar;
+	display: flex;
+	justify-content: center;
+	border-radius: 5px;
+	overflow: hidden;
+ }
+ .avatar:hover {
+	cursor: pointer;
+	padding: 2px;
+	background-color: #ffd700;
+}
+ .avatar img {
+	width: 100%;
+	object-fit: cover;
+ }
+ .errorId {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 700;
+ }
+ .profileStatus {
+	grid-area: status;
+ }
+/**---------------------------------------*/
+ @media (max-width: 1050px) {
+	.profile {
+	  position: relative;
+	  grid-template-columns: 1fr;
+	  grid-template-rows: 75px min-content 1fr;
+	  grid-template-areas:
+	  "id"
+	  "infoBlock"
+	  "status";
+	}
+	.infoBlock {
+	  padding: 10px;
+	}
+	.avatar {
+	  position: absolute;
+	  border-radius: 50%;
+	  padding: 3px;
+	  background-color: #fff;
+	  width: 60px;
+	  height: 60px;
+	  top: 5px;
+	  left: 5px;
+	}
+	.img {
+	  border-radius: 50%;
+	}
+	.id {
+		padding-top: 15px;
+	}
+ }
+@media (max-width: 550px) {
+	.infoBlock {
+		padding: 0px;
+	 }
+	 .infoItem{
+		grid-gap: 1px;
+		grid-template-columns:  1fr;
+		grid-template-rows: min-content min-content;
+		grid-template-areas: 
+		"title"
+		"description";
+	}
+	.title {
+		font-size: 16px;
+		font-weight: 600;
+	 }
+	 .text {
+		font-size: 14px;
+		font-weight: 400;
+	 }
+	 .id {
+		padding-top: 0px;
+		padding-left: 90px;
+		font-size: 20px;
+	}
+	.infoTitle {
+		font-size: 18px;
+		text-align: center;
+		font-weight: 600;
+		margin-bottom: 5px;
+	}
+}
+ 

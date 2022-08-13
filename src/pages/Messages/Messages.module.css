@@ -1,0 +1,21 @@
+.wrapper {
+	display: grid;
+	border-radius: 5px;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content 1fr;
+	grid-template-areas: 
+		"title"
+		"contentPart";
+}
+
+.title {
+	grid-area: title;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #000;
+	padding: 20px 5px;
+}
+.content {
+	grid-area: contentPart;
+	background: url(../../assets/images/fons/fon7.jpg) repeat;
+}

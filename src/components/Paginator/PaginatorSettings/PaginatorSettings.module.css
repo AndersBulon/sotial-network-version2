@@ -1,0 +1,150 @@
+.contant {
+	height: 100%;
+	padding: 10px;
+	background-color: #000;
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	font-style: italic;
+	border-radius: 5px;
+}
+.title {
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+.subtitle {
+	color: rgb(212, 235, 177);
+	font-weight: 700;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.pSizeInput, .pInBlockInput {
+	height: 30px;
+	width: 250px;
+	padding: 5px;
+}
+
+.fieldset {
+	padding: 20px ;
+	display: inline-block;
+}
+.block1, .block2 {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 120px 1fr;
+	grid-template-rows: 1fr;
+	margin: 0px 0px  20px 0px;
+	
+}
+.block1 {
+	grid-area: block1;
+	grid-template-areas: 
+		"pSizeInput pSizeLbl"
+		"pSizeErr pSizeErr";
+}
+.block2 {
+	grid-area: block2;
+	grid-template-areas: 
+		"pInBlockInput pInBlockLbl"
+		"pInBlockErr pInBlockErr";
+}
+.block3 {
+	grid-area: block3;
+}
+.sendBtn {
+	margin-bottom: 10px;
+}
+.pSizeLbl, .pInBlockLbl{
+	justify-self: start;
+	font-weight: 700;
+	font-size: 20px;
+	padding: 5px;
+}
+.pSizeInput, .pInBlockInput {
+	justify-self: center;
+	text-align: center;
+	border-radius: 10px;
+	font-size: 18px;
+	font-weight: 700;
+	width: 80px;
+}
+.pSizeLbl {
+	grid-area: pSizeLbl;
+}
+.pSizeInput {
+	grid-area: pSizeInput;
+}
+.pSizeErr{
+	grid-area: pSizeErr;
+}
+.pInBlockLbl {
+	grid-area: pInBlockLbl;
+}
+.pInBlockInput {
+	grid-area: pInBlockInput;
+}
+.pInBlockErr {
+	grid-area: pInBlockErr;
+}
+/** ================================================================= */
+@media (max-width: 767px) {
+	.title {
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+	.subtitle {
+		font-weight: 400;
+		font-size: 16px;
+		margin-bottom: 10px;
+	}
+	.fieldset {
+		padding: 10px 5px;
+	}
+	.pSizeLbl, .pInBlockLbl{
+		font-weight: 400;
+		font-size: 14px;
+	}
+	.pSizeInput, .pInBlockInput {
+		font-size: 14px;
+		font-weight: 600;
+		width: 50px;
+	}
+	.block1, .block2 {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 60px 1fr;
+		grid-template-rows: 1fr;
+	}
+	.sendBtn {
+		font-size: 14px;
+		height: 30px;
+		padding: 5px;
+		min-width: 80px;
+	}
+}
+@media (max-width: 350px) {
+	.contant {
+		padding: 10px 5px;
+	}
+	.title {
+		margin-bottom: 10px;
+		font-size: 18px;
+	}
+	.subtitle {
+		font-weight: 400;
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+	.pSizeLbl, .pInBlockLbl{
+		font-weight: 400;
+		font-size: 12px;
+	}
+	.pSizeInput, .pInBlockInput {
+		font-size: 14px;
+		font-weight: 600;
+		width: 35px;
+	}
+	.block1, .block2 {
+		grid-template-columns: 40px 1fr;
+	}
+}

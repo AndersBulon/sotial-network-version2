@@ -1,0 +1,174 @@
+.userswrapper {
+	background-color: #222;
+	border-radius: 10px;
+	display: grid;
+	color: #000;
+	font-size: 18px;
+	grid-template-columns:  100px 1fr 130px;
+	grid-template-areas: 
+		"avatar info followBtn";
+}
+.avatar {
+	grid-area: avatar;
+	align-self: center;
+	justify-self: center;
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	transition: all 0.3s ease 0s;
+}
+.btnCont {
+	grid-area: followBtn;
+	margin: 0 auto;
+	align-self: center;
+	justify-self: center
+}
+.followBtn{
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+.lockedBtnCont {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.lockedBtn {
+	height: 40px;
+	width: 40px;
+}
+.avatar img {
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.info_act, .info_disact{
+	position: relative;
+	text-align: left;
+	display: grid;
+	grid-gap: 5px;
+	border-left: #000 10px solid;
+	border-right: #000 10px solid;
+	grid-area: info;
+	padding: 20px;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(25px);
+	grid-template-areas: 
+		"fullname"
+		"status"
+		"itemID";
+}
+.info_act {
+	color: #fff;
+	background-color:  #000 ;
+	box-shadow: inset 0px 0px 30px 0px  #fff;
+}
+.info_disact {
+	background-color: #333;
+	box-shadow: inset 0px 0px 30px 0px  #fff;
+	color: #777;
+}
+
+.info_disact .itemName {
+	color: rgba(255, 0, 0, 0.235);
+}
+.info_act .itemName {
+	color: green;
+}
+.my {
+	padding: 20px;
+	color: #fff;
+	background-color:  #000 ;
+	box-shadow: inset 0px 0px 30px 0px  #fff;
+}
+.my .itemName {
+	color: orange;
+}
+.my .status {
+	font-size: 16px;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.status, .fullname, .itemID {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	grid-template-rows: repeat(max-content);
+	grid-template-areas: "itemName itemText";
+}
+.status{
+	font-size: 14px;
+	grid-area: status;
+}
+.fullname {
+	font-size: 20px;
+	font-weight: 700;
+	font-style: italic;
+	grid-area: fullname;
+}
+.itemID {
+	grid-area: itemID;
+}
+.itemName {
+	grid-area: itemName;
+	font-size: 16px;
+	font-weight: 700;
+	font-style: italic;
+	padding-right: 10px;
+}
+.itemText {
+	grid-area: itemText;
+}
+@media (max-width: 767px) {
+	.userswrapper {
+		color: #000;
+		grid-column-gap: 5px;
+		font-size: 18px;
+		position: relative;
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+			"info";
+	}
+	.avatar {
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		height: 70px;
+		width: 70px;
+		z-index: 3;
+		border: 2px solid orangered;
+	}
+	.btnCont {
+		z-index: 3;
+		position: absolute;
+		left: 110px;
+		top: 20px;
+	}
+	.info_act, .info_disact{
+		border-radius: 10px;
+		text-align: left;
+		display: grid;
+		grid-gap: 5px;
+		border-left: none;
+		border-right: none;
+		grid-area: info;
+		padding: 15px ;
+		grid-template-columns: 1fr;
+		grid-template-rows:  95px 35px 30px;
+		grid-template-areas: 
+			"fullname"
+			"status"
+			"itemID";
+	}
+	.fullname {
+	align-self: end;
+	}
+}
+@media (max-width: 400px) {
+	.fullname {
+		font-size: 14px;
+		}
+		.status{
+			font-size: 12px;
+		}
+}
