@@ -4,7 +4,10 @@ import axios from "axios"
 const instance = axios.create({
 	baseURL: "http://127.0.0.1:3001/account",
 	// withCredentials: true,
-	headers: { "Content-Type": "application/json" }
+	headers: { 
+		"Content-Type": "application/json",
+		// "API-KEY": "2cb23de5-dada-44c2-814f-6d7952212b44" 
+}
 });
 
 // export const usersAPI = {
@@ -34,10 +37,16 @@ const instance = axios.create({
 
 export const authAPISN = {
 	setRegistration(name, login, email, password) {
-
 		return (
 			instance.post(`/reg`,
 				{ name: name, login: login, email: email, password: password })
+		);
+	},
+	setAuth(login, password) {
+		// debugger
+		return (
+			instance.post(`/auth`,
+				{ login: login, password: password })
 		);
 	},
 	// getAuthorisation() {

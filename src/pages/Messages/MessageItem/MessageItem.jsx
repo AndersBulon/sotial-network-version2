@@ -15,24 +15,23 @@ const MessageItem = (props) => {
 			messagesEndRef.current.scrollIntoView({ block: "end", inline: "nearest", behavior: "smooth" })
 		}
 	}
+	const messages = props.messages.filter(function (e) {
+		return "" + e.dialogId === "" + props.dialogId;
+	});
 
 	const formSizeControll = () => {
 		let formSizeRef = document.getElementById('formWrapper')
 		formSizeRef.addEventListener("DOMSubtreeModified", function () {
 			setformHeight(formSizeRef.clientHeight)
-			setTimeout(() => {
+			if (messages.length > 0) {
 				messagesEndRef.current.style.height = formSizeRef.clientHeight - 3 + "px";
 				messagesEndRef.current.scrollIntoView({ block: "end", inline: "nearest", behavior: "smooth" })
-			}, 1);
-
+			}
 		}, false);
 	}
 
-	const messages = props.messages.filter(function (e) {
-		return "" + e.dialogId === "" + props.dialogId;
-	});
-
 	React.useEffect(scrollToBottom, [messages]);
+	// eslint-disable-next-line
 	React.useEffect(formSizeControll, [formHeight]);
 
 

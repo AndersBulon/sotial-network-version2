@@ -1,7 +1,7 @@
 import style from "./Reg.module.css"
 import { useForm } from "react-hook-form"
 import React from "react"
-// import { Navigate } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import eye from "../../assets/images/eye.svg"
 import eyeClosed from "../../assets/images/eye-closed.svg"
 
@@ -43,9 +43,9 @@ function RegForm(props) {
 			<fieldset className={style.fieldset}>
 				<legend> Registration </legend>
 				{<p ref={errRef} className={`${style.message}`}>{props.msg}</p>}
-{/* input name */}
+				{/* input name */}
 				<div>
-					<input  type="text" placeholder={"Name"}
+					<input type="text" placeholder={"Name"}
 						size="20"
 						className={errors.name ? style.inputErr : style.input}
 						{...register('name', {
@@ -56,9 +56,9 @@ function RegForm(props) {
 				{errors.name ?
 					<div className={style.error}>{errors.name.message}</div> :
 					<div className={style.error}></div>}
-{/* input login */}
+				{/* input login */}
 				<div>
-					<input  type="text" placeholder={"Login"}
+					<input type="text" placeholder={"Login"}
 						size="20"
 						className={errors.login ? style.inputErr : style.input}
 						{...register('login', {
@@ -69,9 +69,9 @@ function RegForm(props) {
 				{errors.login ?
 					<div className={style.error}>{errors.login.message}</div> :
 					<div className={style.error}></div>}
-{/* input email */}
+				{/* input email */}
 				<div>
-					<input  type="text" placeholder={"Email"}
+					<input type="text" placeholder={"Email"}
 						size="20"
 						className={errors.email ? style.inputErr : style.input}
 						{...register('email', {
@@ -104,27 +104,23 @@ function RegForm(props) {
 					<div className={style.error}></div>}
 			</fieldset>
 
-
-			<div>{props.isAuth ?
-				<button type="button" className={`${style.submitBtn} button `}
-					onClick={props.logOut}>
-					Unlogin
-				</button>
-				:
+			<div>
 				<input type="submit" className={`${style.submitBtn} button`}
 					onClick={handleClick}
 					value="Send"
 				/>
-			}
 			</div>
 		</form>
 	)
 }
 
 function Reg(props) {
-	// if (props.isAuth) {
-	// 	return <Navigate replace to='/' />
-	// }
+	if (props.code === 0) {
+		return <Navigate replace to='/login' />
+	}
+	if (props.auth) {
+		return <Navigate replace to='/' />
+	}
 	return (
 		<div className={style.content} >
 			<h3>Registration</h3>

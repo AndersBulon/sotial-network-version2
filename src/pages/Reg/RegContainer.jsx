@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { registerThunkCreator } from "../../redux/auth_reducer.js";
-import { getSelected_AuthCode, getSelected_AuthMsg} from "../../redux/auth_selectors.js";
+import { getSelected_AuthCode, getSelected_AuthMsg, getSelected_IsAuth} from "../../redux/auth_selectors.js";
 import Reg from "./Reg.jsx";
 
 
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
 	return {
 		msg: getSelected_AuthMsg(state),
 		code: getSelected_AuthCode(state),
+		auth: getSelected_IsAuth(state)
 	
 	}
 }

@@ -12,6 +12,7 @@ const SET_RESULT_CODE = 'SET-RESULT-CODE';
 const GET_CAPTCHA = 'GET-CAPTCHA';
 
 const SET_REG = 'SET-REG';
+const SET_AUTH = 'SET-AUTH';
 //* =============  STATE  INITIOLISATION  =====================
 
 let initialState = {
@@ -23,6 +24,7 @@ let initialState = {
 	password: null,
 	code: null,
 	msg: null,
+	token: null,
 	isAuth: false,
 	captcha: '',
 	messages: [],
@@ -66,6 +68,15 @@ export const authReducer = (state = initialState, action) => {
 				msg: action.msg
 			};
 		}
+		case SET_AUTH: {
+			return {
+				...state,
+				isAuth: action.isAuth,
+				token: action.token,
+				code: action.code,
+				msg: action.msg
+			};
+		}
 		default:
 			return state;
 	}
@@ -74,7 +85,8 @@ export const authReducer = (state = initialState, action) => {
 //* =============  ActionCreators  _AC  ===================================
 
 export const setMyProfile_AC = (myId, email, login, isAuth, captcha) => ({
-	 type: SET_MY_PROFILE, data: { myId, email, login, isAuth, captcha } });
+	type: SET_MY_PROFILE, data: { myId, email, login, isAuth, captcha }
+});
 export const setMessage_AC = (messages) => ({ type: SET_MESSAGE, messages });
 export const setResultCode_AC = (code) => ({ type: SET_RESULT_CODE, code });
 export const getCaptcha_AC = (url) => ({ type: GET_CAPTCHA, url });
@@ -115,10 +127,17 @@ export const getCaptchaThunkCreator = () => async (dispatch) => {
 
 //* =============  ActionCreators  for SN ===========================
 export const register_AC = (code, msg) => ({ type: SET_REG, code, msg });
+export const auth_AC = (msg, isAuth, token, code) => ({ type: SET_AUTH, msg, isAuth, token, code });
 
 export const registerThunkCreator = (name, login, email, password) => async (dispatch) => {
-	
 	let response = await authAPISN.setRegistration(name, login, email, password)
-
 	dispatch(register_AC(response.data.code, response.data.msg));
+}
+export const authThunkCreator = (login, password) => async (dispatch) => {
+	let response = await authAPISN.setAuth(login, password)
+	if (!response.data.success) {
+		dispatch(auth_AC(response.data.msg, false, null, response.data.code));
+	}
+	else
+		dispatch(auth_AC(response.data.msg, true, response.data.token));
 }

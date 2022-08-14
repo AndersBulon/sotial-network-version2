@@ -65,6 +65,7 @@ let Header = (props) => {
 							<li><NavLink onClick={linkClickChange} className={linkclass} to="/profile">Profile</NavLink></li>
 							<li><NavLink onClick={linkClickChange} className={linkclass} to="/users">Users</NavLink></li>
 							<li><NavLink onClick={linkClickChange} className={linkclass} to="/settings">Settings</NavLink></li>
+							<li><NavLink onClick={linkClickChange} className={linkclass} to="/reg">SignUp</NavLink></li>
 							{props.isAuth ?
 								<li><NavLink onClick={linkClickChange} className={linkclass} to="/login">Logout({props.login})</NavLink></li>
 								: <li><NavLink onClick={linkClickChange} className={linkclass} to="/login">Login</NavLink></li>}

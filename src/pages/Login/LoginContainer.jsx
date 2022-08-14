@@ -1,23 +1,22 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import Login from "./Login.jsx";
-import { getCaptchaThunkCreator, loginThunkCreator, logOutThunkCreator } from "../../redux/auth_reducer.js";
-import { getSelected_AuthMessages, getSelected_Captcha, getSelected_IsAuth } from "../../redux/auth_selectors.js";
+import { authThunkCreator, logOutThunkCreator } from "../../redux/auth_reducer.js";
+import { getSelected_IsAuth, getSelected_AuthMsg, getSelected_AuthToken, getSelected_AuthCode } from "../../redux/auth_selectors.js";
 
 
 const mapStateToProps = (state) => {
 	return {
-		captcha: getSelected_Captcha(state),
+		code: getSelected_AuthCode(state),
+		token: getSelected_AuthToken(state),
 		isAuth: getSelected_IsAuth(state),
-		messages: getSelected_AuthMessages(state),
+		msg: getSelected_AuthMsg(state),
 	}
 }
 const mapDispatchToProps = (dispatch) => {
 	return {
-		loginThunkCreator: (email, password, rememberMe, captcha) => {
-			 dispatch(loginThunkCreator(email, password, rememberMe, captcha)) },
 		logOut: () => { dispatch(logOutThunkCreator()) },
-		getCaptcha: () => (dispatch(getCaptchaThunkCreator))
+		setLogin: (login, password) => (dispatch(authThunkCreator(login, password))),
 	}
 }
 
